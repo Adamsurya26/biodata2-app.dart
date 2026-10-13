@@ -3,11 +3,7 @@ import 'package:provider/provider.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 
-// =====================================================================
-// MODEL
-// =====================================================================
-
-/// Satu baris riwayat. Dipakai untuk Pendidikan dan Pekerjaan,.
+/// Satu baris riwayat. Dipakai untuk Pendidikan dan Pekerjaan.
 class Riwayat {
   final String judul;
   final String subjudul;
@@ -74,11 +70,9 @@ class Nilai {
   }
 }
 
-// =====================================================================
 // STATE MANAGEMENT (Provider + ChangeNotifier)
-// =====================================================================
 
-/// State untuk Menu 1: Biodata Mahasiswa
+/// State untuk Menu 1: Biodata
 class BiodataProvider extends ChangeNotifier {
   final Map<String, String> _pribadi = {
     'Nama Lengkap': 'Adam Surya Budiansyah',
@@ -128,7 +122,7 @@ class BiodataProvider extends ChangeNotifier {
   }
 }
 
-/// State untuk Menu 2: Nilai Mahasiswa
+/// State untuk Menu 2: Nilai
 class NilaiProvider extends ChangeNotifier {
   final List<Nilai> _daftar = [
     const Nilai(
@@ -179,7 +173,7 @@ class NilaiProvider extends ChangeNotifier {
   }
 }
 
-/// State untuk Menu 3: Profil Pengguna (termasuk mode gelap)
+/// State untuk Menu 3: Profil (termasuk mode gelap)
 class ProfilProvider extends ChangeNotifier {
   String nama = 'Adam Surya Budiansyah';
   String username = 'Adamsurya2000';
@@ -206,9 +200,7 @@ class ProfilProvider extends ChangeNotifier {
   }
 }
 
-// =====================================================================
 // MAIN
-// =====================================================================
 
 void main() {
   runApp(
@@ -257,9 +249,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// =====================================================================
-// HALAMAN UTAMA (menu di bagian bawah)
-// =====================================================================
+// HALAMAN UTAMA
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -302,9 +292,7 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-// =====================================================================
 // FUNGSI BANTU: dialog form dengan beberapa isian teks
-// =====================================================================
 
 Future<List<String>?> tampilkanFormDialog(
     BuildContext context, {
@@ -356,10 +344,8 @@ Future<List<String>?> tampilkanFormDialog(
   );
 }
 
-// =====================================================================
-// MENU 1: BIODATA MAHASISWA
+// MENU 1: BIODATA
 // (Pribadi, Pendidikan, Pekerjaan)
-// =====================================================================
 
 class BiodataPage extends StatelessWidget {
   const BiodataPage({super.key});
@@ -521,9 +507,7 @@ class RiwayatTab extends StatelessWidget {
   }
 }
 
-// =====================================================================
-// MENU 2: NILAI MAHASISWA (ListView -> Detail -> Form tambah)
-// =====================================================================
+// MENU 2: NILAI (ListView -> Detail -> Form tambah)
 
 class NilaiPage extends StatelessWidget {
   const NilaiPage({super.key});
@@ -765,9 +749,7 @@ class DetailNilaiPage extends StatelessWidget {
   }
 }
 
-// =====================================================================
 // MENU 3: PROFIL PENGGUNA
-// =====================================================================
 
 class ProfilPage extends StatelessWidget {
   const ProfilPage({super.key});
