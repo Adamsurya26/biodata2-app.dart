@@ -71,8 +71,8 @@ class Nilai {
 }
 
 // STATE MANAGEMENT (Provider + ChangeNotifier)
-
 /// State untuk Menu 1: Biodata
+
 class BiodataProvider extends ChangeNotifier {
   final Map<String, String> _pribadi = {
     'Nama Lengkap': 'Adam Surya Budiansyah',
@@ -223,7 +223,7 @@ ThemeData _buatTema(Brightness brightness) {
       brightness: brightness,
     ),
     appBarTheme: const AppBarTheme(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.red,
       foregroundColor: Colors.white,
       centerTitle: false,
     ),
@@ -408,7 +408,7 @@ class PribadiTab extends StatelessWidget {
             children: [
               for (int i = 0; i < entri.length; i++) ...[
                 ListTile(
-                  leading: Icon(_ikon[i], color: Colors.blue),
+                  leading: Icon(_ikon[i], color: Colors.lightBlue),
                   title: Text(
                     entri[i].key,
                     style: const TextStyle(fontSize: 12, color: Colors.grey),
@@ -749,7 +749,7 @@ class DetailNilaiPage extends StatelessWidget {
   }
 }
 
-// MENU 3: PROFIL PENGGUNA
+// MENU 3: PROFIL
 
 class ProfilPage extends StatelessWidget {
   const ProfilPage({super.key});
